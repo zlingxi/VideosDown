@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eacb3d0c-9879-4682-8416-6b3405d48f77" name="更改" comment="新增科学上网检测">
+    <list default="true" id="eacb3d0c-9879-4682-8416-6b3405d48f77" name="更改" comment="新增分辨率检测以及下载日志显示">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -85,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729832459188</updated>
       <workItem from="1729832461793" duration="6060000" />
-      <workItem from="1729838605454" duration="904000" />
+      <workItem from="1729838605454" duration="2083000" />
     </task>
     <task id="LOCAL-00001" summary="新增科学上网检测">
       <option name="closed" value="true" />
@@ -95,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729838492336</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="新增分辨率检测以及下载日志显示">
+      <option name="closed" value="true" />
+      <created>1729839536913</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729839536913</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,9 +111,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增科学上网检测" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增科学上网检测" />
+    <MESSAGE value="新增分辨率检测以及下载日志显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增分辨率检测以及下载日志显示" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/VideosDown$main.coverage" NAME="main 覆盖结果" MODIFIED="1729839502545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/VideosDown$main.coverage" NAME="main 覆盖结果" MODIFIED="1729840649349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -6,7 +6,7 @@ import json  # 用于解析yt-dlp输出的JSON数据
 from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                                QHBoxLayout, QLabel, QLineEdit, QPushButton,
                                QFileDialog, QMessageBox, QComboBox, QTextEdit)
-from PySide6.QtGui import QFont  # 导入 QFont
+from PySide6.QtGui import QFont, QIcon  # 导入 QIcon
 from PySide6.QtCore import QThread, Signal  # 导入多线程和信号
 
 class VideoDownloader(QMainWindow):
@@ -17,55 +17,74 @@ class VideoDownloader(QMainWindow):
     def init_ui(self):
         """初始化用户界面"""
         self.setWindowTitle("VideosDown v3.0 By@lingxi")
-        self.setGeometry(800, 300, 400, 320)  # 调整窗口高度以容纳新元素
+        self.setGeometry(800, 300, 600, 340)  # 调整窗口高度以容纳新元素
+
+        # 设置窗口图标
+        icon_path = os.path.join(os.getcwd(), 'img', 'app.ico')  # 获取当前目录下img文件夹中的图标
+        self.setWindowIcon(QIcon(icon_path))
 
         # 设置全局字体为微软雅黑
-        font = QFont("Microsoft YaHei", 8)
+        font = QFont("Microsoft YaHei", 10)
         QApplication.setFont(font)
 
         central_widget = QWidget()
         layout = QVBoxLayout()
+        layout.setSpacing(10)  # 增加控件之间的间距
 
         # 检测按钮
-        self.check_button = QPushButton("检测科学上网")
+        self.check_button = QPushButton("网络检测")
+        self.check_button.setFixedSize(80, 25)
+        self.check_button.setStyleSheet("background-color: #4CAF50; color: white;")  # 扁平化颜色
         self.check_button.clicked.connect(self.check_google_access)
         layout.addWidget(self.check_button)
 
-
-        # 输入URL
+        # 输入URL和检测分辨率按钮
+        url_layout = QHBoxLayout()
         self.url_label = QLabel("视频链接:")
         self.url_input = QLineEdit()
-        layout.addWidget(self.url_label)
-        layout.addWidget(self.url_input)
-
-        # 检测分辨率按钮
         self.check_res_btn = QPushButton("检测可下载分辨率")
+        self.check_res_btn.setFixedSize(130, 25)
+        self.check_res_btn.setStyleSheet("background-color: #2196F3; color: white;")  # 扁平化颜色
         self.check_res_btn.clicked.connect(self.check_video_resolutions)
-        layout.addWidget(self.check_res_btn)
 
-        # 可用分辨率下拉框
+        url_layout.addWidget(self.url_label)
+        url_layout.addWidget(self.url_input)
+        url_layout.addWidget(self.check_res_btn)
+
+        layout.addLayout(url_layout)
+
+        # 选择分辨率的标签和下拉框
+        res_layout = QHBoxLayout()
+        self.resolution_label = QLabel("选择分辨率:")
         self.resolution_combo = QComboBox()
-        layout.addWidget(QLabel("选择分辨率:"))
-        layout.addWidget(self.resolution_combo)
+        self.resolution_combo.setFixedWidth(80)  # 设置下拉框宽度
 
-        # 选择保存路径
+        res_layout.addWidget(self.resolution_label)
+        res_layout.addWidget(self.resolution_combo)
+        res_layout.addStretch(1)  # 添加弹性空间以左对齐下拉框
+
+        layout.addLayout(res_layout)
+
+        # 选择保存路径和下载按钮
+        path_layout = QHBoxLayout()
         self.save_path_label = QLabel("保存路径:")
         self.save_path_input = QLineEdit()
         self.save_path_btn = QPushButton("浏览...")
+        self.save_path_btn.setFixedSize(80, 25)
+        self.save_path_btn.setStyleSheet("background-color: #FF9800; color: white;")  # 扁平化颜色
         self.save_path_btn.clicked.connect(self.select_save_path)
 
-        path_layout = QHBoxLayout()
+        self.download_btn = QPushButton("下载视频")
+        self.download_btn.setFixedSize(100, 25)
+        self.download_btn.setStyleSheet("background-color: #f44336; color: white;")  # 扁平化颜色
+        self.download_btn.clicked.connect(self.download_video)
+
+        path_layout.addWidget(self.save_path_label)
         path_layout.addWidget(self.save_path_input)
         path_layout.addWidget(self.save_path_btn)
+        path_layout.addWidget(self.download_btn)  # 下载按钮放在浏览按钮右侧
 
-        layout.addWidget(self.save_path_label)
         layout.addLayout(path_layout)
-
-        # 下载按钮
-        self.download_btn = QPushButton("下载视频")
-        self.download_btn.clicked.connect(self.download_video)
-        layout.addWidget(self.download_btn)
-
 
         # 日志文本框
         self.log_text = QTextEdit()
@@ -210,6 +229,6 @@ class DownloadThread(QThread):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    downloader = VideoDownloader()
-    downloader.show()
+    VideosDown = VideoDownloader()
+    VideosDown.show()
     sys.exit(app.exec())
