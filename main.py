@@ -5,12 +5,31 @@ import requests  # 需要安装requests库
 import json  # 用于解析yt-dlp输出的JSON数据
 from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                                QHBoxLayout, QLabel, QLineEdit, QPushButton,
-                               QFileDialog, QMessageBox, QComboBox, QTextEdit)
+                               QFileDialog, QMessageBox, QComboBox, QTextEdit, QInputDialog)
 from PySide6.QtGui import QFont, QIcon  # 导入 QIcon
 from PySide6.QtCore import QThread, Signal  # 导入多线程和信号
 
-from src.help import show_help_message # 导入帮助模块
-from src.about import show_about_message  # 导入关于模块
+# 将当前目录的 src 子目录添加到 sys.path
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
+from help import show_help_message # 导入帮助模块
+from about import show_about_message  # 导入关于模块
+import license  # 导入license模块
+
+LICENSE_FILE = 'config.json'  # 本地授权文件路径
+
+def save_license(user_id, expiration_date):
+    """保存用户授权信息到本地JSON文件"""
+    license_data = {user_id: {"expiration_date": expiration_date}}
+    with open(LICENSE_FILE, 'w') as f:
+        json.dump(license_data, f, indent=4)
+
+def load_license():
+    """从本地文件加载用户授权信息"""
+    if os.path.exists(LICENSE_FILE):
+        with open(LICENSE_FILE, 'r') as f:
+            return json.load(f)
+    return None
 
 
 class VideoDownloader(QMainWindow):
@@ -22,14 +41,6 @@ class VideoDownloader(QMainWindow):
         """初始化用户界面"""
         self.setWindowTitle("VideosDown v3.0 By@lingxi")
         self.setGeometry(800, 300, 600, 340)
-
-        # 设置窗口图标
-        icon_path = os.path.join(os.getcwd(), 'img', 'app.ico')
-        self.setWindowIcon(QIcon(icon_path))
-
-        # 设置全局字体为微软雅黑
-        font = QFont("Microsoft YaHei", 10)
-        QApplication.setFont(font)
 
         central_widget = QWidget()
         layout = QVBoxLayout()
@@ -127,8 +138,6 @@ class VideoDownloader(QMainWindow):
     def show_about(self):
         """显示帮助与关于信息"""
         show_about_message(self)  # 调用 about.py 中的函数
-
-
 
 
 
@@ -266,6 +275,45 @@ class DownloadThread(QThread):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+
+    # 设置全局字体为微软雅黑与全局ico
+    font = QFont("Microsoft YaHei", 8)
+    app.setFont(font)  # 将字体设置为全局字体
+    app.setWindowIcon(QIcon("img/app.ico"))
+
+    # 尝试加载本地授权信息
+    license_info = load_license()
+
+    if license_info:
+        user_id = next(iter(license_info))  # 获取第一个用户ID
+        expiration_date = license_info[user_id]["expiration_date"]
+
+        # 检查授权是否过期
+        if license.check_user_license(user_id):
+            # 如果授权有效，正常启动应用
+            window = VideoDownloader()  # 创建主窗口
+            window.show()  # 显示窗口
+            sys.exit(app.exec())  # 进入主循环
+        else:
+            os.remove(LICENSE_FILE)  # 删除过期的授权文件
+
+    # 创建一个输入对话框，让用户输入他们的用户 ID
+    user_id, ok = QInputDialog.getText(None, "用户验证", "请输入您的用户ID：")
+
+    if not ok or not user_id:
+        QMessageBox.warning(None, "用户验证失败", "您必须输入一个有效的用户ID来启动程序。")
+        sys.exit(0)
+
+    # 检查该用户的授权信息
+    if not license.check_user_license(user_id):
+        # 如果授权验证失败，直接退出应用
+        sys.exit(0)
+
+    # 如果授权有效，保存用户授权信息到本地文件
+    expiration_date = license.fetch_license_data().get(user_id, {}).get("expiration_date")
+    if expiration_date:
+        save_license(user_id, expiration_date)
+
     VideosDown = VideoDownloader()
     VideosDown.show()
     sys.exit(app.exec())
