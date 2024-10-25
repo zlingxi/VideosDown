@@ -9,6 +9,10 @@ from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
 from PySide6.QtGui import QFont, QIcon  # 导入 QIcon
 from PySide6.QtCore import QThread, Signal  # 导入多线程和信号
 
+from src.help import show_help_message # 导入帮助模块
+from src.about import show_about_message  # 导入关于模块
+
+
 class VideoDownloader(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -17,10 +21,10 @@ class VideoDownloader(QMainWindow):
     def init_ui(self):
         """初始化用户界面"""
         self.setWindowTitle("VideosDown v3.0 By@lingxi")
-        self.setGeometry(800, 300, 600, 340)  # 调整窗口高度以容纳新元素
+        self.setGeometry(800, 300, 600, 340)
 
         # 设置窗口图标
-        icon_path = os.path.join(os.getcwd(), 'img', 'app.ico')  # 获取当前目录下img文件夹中的图标
+        icon_path = os.path.join(os.getcwd(), 'img', 'app.ico')
         self.setWindowIcon(QIcon(icon_path))
 
         # 设置全局字体为微软雅黑
@@ -29,14 +33,34 @@ class VideoDownloader(QMainWindow):
 
         central_widget = QWidget()
         layout = QVBoxLayout()
-        layout.setSpacing(10)  # 增加控件之间的间距
+        layout.setSpacing(10)
+
+        # 创建一个水平布局来放置两个按钮
+        button_layout = QHBoxLayout()
 
         # 检测按钮
         self.check_button = QPushButton("网络检测")
         self.check_button.setFixedSize(80, 25)
-        self.check_button.setStyleSheet("background-color: #4CAF50; color: white;")  # 扁平化颜色
+        self.check_button.setStyleSheet("background-color: #4CAF50; color: white;")
         self.check_button.clicked.connect(self.check_google_access)
-        layout.addWidget(self.check_button)
+        button_layout.addWidget(self.check_button)
+
+        # 帮助按钮
+        self.help_button = QPushButton("帮助")
+        self.help_button.setFixedSize(80, 25)
+        self.help_button.setStyleSheet("background-color: #2196F3; color: white;")
+        self.help_button.clicked.connect(self.show_help)
+        button_layout.addWidget(self.help_button)
+
+        # 关于按钮
+        self.about_button = QPushButton("关于")
+        self.about_button.setFixedSize(80, 25)
+        self.about_button.setStyleSheet("background-color: #2196F3; color: white;")
+        self.about_button.clicked.connect(self.show_about)
+        button_layout.addWidget(self.about_button)
+
+        button_layout.addStretch(1)  # 添加弹性空间，确保按钮左对齐
+        layout.addLayout(button_layout)  # 将按钮布局添加到主布局
 
         # 输入URL和检测分辨率按钮
         url_layout = QHBoxLayout()
@@ -44,7 +68,7 @@ class VideoDownloader(QMainWindow):
         self.url_input = QLineEdit()
         self.check_res_btn = QPushButton("检测可下载分辨率")
         self.check_res_btn.setFixedSize(130, 25)
-        self.check_res_btn.setStyleSheet("background-color: #2196F3; color: white;")  # 扁平化颜色
+        self.check_res_btn.setStyleSheet("background-color: #2196F3; color: white;")
         self.check_res_btn.clicked.connect(self.check_video_resolutions)
 
         url_layout.addWidget(self.url_label)
@@ -57,11 +81,11 @@ class VideoDownloader(QMainWindow):
         res_layout = QHBoxLayout()
         self.resolution_label = QLabel("选择分辨率:")
         self.resolution_combo = QComboBox()
-        self.resolution_combo.setFixedWidth(80)  # 设置下拉框宽度
+        self.resolution_combo.setFixedWidth(80)
 
         res_layout.addWidget(self.resolution_label)
         res_layout.addWidget(self.resolution_combo)
-        res_layout.addStretch(1)  # 添加弹性空间以左对齐下拉框
+        res_layout.addStretch(1)
 
         layout.addLayout(res_layout)
 
@@ -71,18 +95,18 @@ class VideoDownloader(QMainWindow):
         self.save_path_input = QLineEdit()
         self.save_path_btn = QPushButton("浏览...")
         self.save_path_btn.setFixedSize(80, 25)
-        self.save_path_btn.setStyleSheet("background-color: #FF9800; color: white;")  # 扁平化颜色
+        self.save_path_btn.setStyleSheet("background-color: #FF9800; color: white;")
         self.save_path_btn.clicked.connect(self.select_save_path)
 
         self.download_btn = QPushButton("下载视频")
         self.download_btn.setFixedSize(100, 25)
-        self.download_btn.setStyleSheet("background-color: #f44336; color: white;")  # 扁平化颜色
+        self.download_btn.setStyleSheet("background-color: #f44336; color: white;")
         self.download_btn.clicked.connect(self.download_video)
 
         path_layout.addWidget(self.save_path_label)
         path_layout.addWidget(self.save_path_input)
         path_layout.addWidget(self.save_path_btn)
-        path_layout.addWidget(self.download_btn)  # 下载按钮放在浏览按钮右侧
+        path_layout.addWidget(self.download_btn)
 
         layout.addLayout(path_layout)
 
@@ -94,6 +118,19 @@ class VideoDownloader(QMainWindow):
 
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
+
+
+    def show_help(self):
+        """显示帮助与关于信息"""
+        show_help_message(self)  # 调用 about.py 中的函数
+
+    def show_about(self):
+        """显示帮助与关于信息"""
+        show_about_message(self)  # 调用 about.py 中的函数
+
+
+
+
 
     def select_save_path(self):
         """选择保存路径"""
