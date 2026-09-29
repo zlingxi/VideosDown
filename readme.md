@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="app/resources/images/logo.png" width="96" alt="VideosDown">
+<img src="assets/logo.png" width="96" alt="VideosDown">
 
 # VideosDown
 
