@@ -15,8 +15,9 @@
 [官网](https://www.aizzx.top/VideosDown) · [获取授权](https://www.aizzx.top/shop/1120.html) · [使用指南](#-使用指南) · [常见问题](#-常见问题) · [为什么选择](#-为什么选择-videosdown) · [从源码构建](#-从源码构建) · [反馈与联系](#-反馈与联系)
 
 <p align="center">
-  <img src="assets/home.png" width="880" alt="主程序界面（浅色 / 深色）"><br>
-  <sub>浅色（左） · 深色（右）</sub>
+  <img src="assets/home-light.png" width="49%" alt="主程序界面（浅色主题）">
+  <img src="assets/home-dark.png" width="49%" alt="主程序界面（深色主题）"><br>
+  <sub>主程序界面：浅色（左） · 深色（右）</sub>
 </p>
 
 </div>
@@ -115,7 +116,8 @@
 - **本次下载**：文件名、保存目录与各项能力一览，确认后一键开始
 
 <p align="center">
-  <img src="assets/parse.png" width="880" alt="解析任务（浅色 / 深色）"><br>
+  <img src="assets/parse-light.png" width="49%" alt="解析任务（浅色主题）">
+  <img src="assets/parse-dark.png" width="49%" alt="解析任务（深色主题）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -126,7 +128,8 @@
 - **并发调度**：超出同时下载数量的任务自动排队，前置任务完成后立即开始
 
 <p align="center">
-  <img src="assets/tasks.png" width="880" alt="下载任务（浅色 / 深色）"><br>
+  <img src="assets/tasks-light.png" width="49%" alt="下载任务（浅色主题）">
+  <img src="assets/tasks-dark.png" width="49%" alt="下载任务（深色主题）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -141,13 +144,15 @@
 - **风控提醒**：界面常驻 IP 风控提示，建议配合干净的代理 IP 并控制解析频率
 
 <p align="center">
-  <img src="assets/batch.png" width="880" alt="批量下载（浅色 / 深色）"><br>
-  <sub>浅色（左） · 深色（右）</sub>
+  <img src="assets/batch-light.png" width="49%" alt="批量下载（浅色主题）">
+  <img src="assets/batch-dark.png" width="49%" alt="批量下载（深色主题）"><br>
+  <sub>列表解析：浅色（左） · 深色（右）</sub>
 </p>
 
 <p align="center">
-  <img src="assets/batch-links.png" width="420" alt="批量下载·链接列表（浅色）"><br>
-  <sub>链接列表模式（浅色）</sub>
+  <img src="assets/batch-links-light.png" width="49%" alt="批量下载（浅色主题）">
+  <img src="assets/batch-links-dark.png" width="49%" alt="批量下载（深色主题）"><br>
+  <sub>链接列表：浅色（左） · 深色（右）</sub>
 </p>
 
 ### 视频转码
@@ -161,7 +166,8 @@
 - **防覆盖**：输出目录存在同名文件时自动追加序号，不会覆盖已有文件
 
 <p align="center">
-  <img src="assets/transcode.png" width="880" alt="视频转码（浅色 / 深色）"><br>
+  <img src="assets/transcode-light.png" width="49%" alt="视频转码（浅色主题）">
+  <img src="assets/transcode-dark.png" width="49%" alt="视频转码（深色主题）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -174,7 +180,8 @@
 - **支持 Cookie**：可加载 Cookie 获取会员 / 受限内容对应的字幕与封面
 
 <p align="center">
-  <img src="assets/subtitle.png" width="720" alt="字幕封面（浅色 / 深色）"><br>
+  <img src="assets/subtitle-light.png" width="49%" alt="字幕封面（浅色主题）">
+  <img src="assets/subtitle-dark.png" width="49%" alt="字幕封面（深色主题）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -187,7 +194,8 @@
 - **安全范围**：仅清理下载临时目录与日志目录，不触碰任何下载数据
 
 <p align="center">
-  <img src="assets/cache.png" width="720" alt="缓存清理（浅色 / 深色）"><br>
+  <img src="assets/cache-light.png" width="49%" alt="缓存清理（浅色主题）">
+  <img src="assets/cache-dark.png" width="49%" alt="缓存清理（深色主题）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -209,6 +217,28 @@
 - **使用**：软件保持运行（最小化到托盘即可）→ 打开视频页 → 点击右下角标记 → 软件自动弹到前台并完成解析，选择画质后下载
 - **工具栏兜底**：任意页面可点扩展图标手动发送当前页面链接，交给软件自动判断平台
 - **提醒**：软件需处于运行状态（最小化到托盘也算）；扩展只在支持平台的视频页显示标记
+
+<p align="center">
+  <img src="assets/browser-extension-light.png" width="49%" alt="浏览器扩展设置（浅色主题）">
+  <img src="assets/browser-extension-dark.png" width="49%" alt="浏览器扩展设置（深色主题）"><br>
+  <sub>软件内浏览器扩展设置：浅色（左） · 深色（右）</sub>
+</p>
+
+扩展安装并启用后，可在浏览器扩展管理页查看状态与权限：
+
+<p align="center">
+  <img src="assets/browser-extension-assistant.png" width="49%" alt="浏览器中的 VideosDown 助手扩展">
+</p>
+
+### 软件设置
+
+设置面板可调整下载行为、界面偏好与浏览器扩展通信选项；配置项按功能分区展示。
+
+<p align="center">
+  <img src="assets/settings-light.png" width="49%" alt="软件设置（浅色主题）">
+  <img src="assets/settings-dark.png" width="49%" alt="软件设置（深色主题）"><br>
+  <sub>软件设置：浅色（左） · 深色（右）</sub>
+</p>
 
 ## ⚙️ 配置与数据位置
 
@@ -271,19 +301,20 @@
 **方式一：Git 克隆（推荐，便于后续更新）**
 
 ```bash
-git clone https://gitee.com/xxxxxx/videosdown.git            # 主仓库（Gitee）-获取授权后可见具体地址
-git clone https://github.comxxxxxx/VideosDown-Private.git   # 备用仓库（GitHub）-获取授权后可见具体地址
+git clone <授权后获取的仓库地址> VideosDown
 cd VideosDown
-git checkout feat         # 当前新功能方向分支
-git checkout dev         # 当前开发分支
-git checkout main       # 当前主线分支
+git switch <授权后指定的分支>
 ```
+
+> 仓库地址与可访问分支由源码授权后提供；主仓库和备用仓库任选其一，不要连续克隆多个仓库。
 
 **方式二：下载压缩包**
 
 在仓库页面点击「克隆 / 下载 → 下载 ZIP」解压即可（不含 Git 历史，后续更新需重新下载）。
 
 ### 环境准备与运行
+
+项目使用 `uv` 根据 `pyproject.toml` 与 `uv.lock` 固定 Python 和依赖版本；不要再使用未锁定的 `pip install -r requirements.txt` 流程。
 
 > [!NOTE]
 > 仓库**不包含** FFmpeg 与 Deno 运行时（已被 `.gitignore` 排除），首次构建前需自行准备：
@@ -293,16 +324,21 @@ git checkout main       # 当前主线分支
 > - 也可以直接从官方预编译安装包中复制这两个目录
 
 ```bash
-# 1. 创建虚拟环境（Python 3.13+）
-python3 -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+# 安装 uv：https://docs.astral.sh/uv/getting-started/installation/
+# pyproject.toml 固定要求 Python 3.14.8；uv 会按需下载并管理该版本
 
-# 2. 安装依赖
-pip install -r requirements.txt
+# 同步项目依赖并创建虚拟环境
+uv sync
 
-# 3. 运行
-python videosdown.py
+# 运行
+uv run python videosdown.py
+
+# 构建当前平台版本（Windows 生成 Inno Setup 安装包，macOS 生成 DMG）
+uv run python build_app.py
 ```
+
+> Windows 构建需要安装 Inno Setup；如 `ISCC.exe` 不在默认位置，可设置 `INNO_SETUP_COMPILER` 环境变量。
+> macOS 构建需要安装 `create-dmg`（`brew install create-dmg`）。首次构建前还需按上方说明准备平台对应的 FFmpeg 与 Deno 文件。
 
 ## 📄 许可证与声明
 
