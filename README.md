@@ -6,7 +6,7 @@
 
 **基于 Proprietary 协议的跨平台桌面视频下载工具，内嵌字幕封面独立下载、批量下载与视频转码功能**
 
-[![Version](https://img.shields.io/badge/version-4.0.1-5bc372.svg)](https://www.aizzx.top/VideosDown)
+[![Version](https://img.shields.io/badge/version-4.0.2-5bc372.svg)](https://www.aizzx.top/VideosDown)
 [![License](https://img.shields.io/badge/license-Proprietary-orange.svg)](LICENSE.md)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64%20%7C%20macOS%20Apple%20Silicon%20%7C%20macOS%20Intel-lightgrey.svg)](#-安装)
 [![Core](https://img.shields.io/badge/core-yt--dlp%20%2B%20FFmpeg-red.svg)](https://github.com/yt-dlp/yt-dlp)
@@ -39,7 +39,8 @@
 - 🆕 **悬浮标记一键发送**：Chrome / Edge 打开支持平台的视频页，右下角「用 VideosDown 下载」悬浮标记点击即把链接发送到软件解析下载，免去手动复制粘贴
 - 🆕 **拖动与记忆**：标记可拖动，位置按站点记忆；SPA 页面切换自动跟随，工具栏图标可对任意页面手动发送
 - 🆕 **本机安全通信**：仅与本机运行的软件通信（127.0.0.1 回环），不收集、不上传任何浏览记录
-- **获取方式**：扩展包与图文安装教程见官方文档（应用商店版本上架后将支持一键安装）
+- **软件内扩展中心**：主窗口右上角提供快捷入口，设置面板保留完整管理入口，可查看连接状态、测试连接并管理扩展行为设置；Chrome / Edge 商店暂未上架，上架后可从这里一键前往安装
+- **扩展 1.1.0**：支持定期连接检测与设置同步；1.0.0 仍可发送链接，连接检测和悬浮按钮设置需使用 1.1.0
 
 ### 🧰 效率工具
 
@@ -204,7 +205,7 @@
 
 配合 Chrome / Edge 浏览器使用：安装「VideosDown 助手」扩展后，支持平台的视频页右下角会出现「用 VideosDown 下载」悬浮标记，点击即把链接发送到软件解析下载。
 
-- **安装**：从官方渠道下载扩展包，按图文教程以开发者模式加载（应用商店版本上架后将支持一键安装），详见 [浏览器扩展使用教程](docs/浏览器扩展使用教程.md)
+- **安装**：在软件主窗口右上角点击扩展图标，或从「设置 → 打开扩展中心」前往 VideosDown 官网下载扩展包；Chrome / Edge 商店暂未上架，上架后可从软件内一键前往安装。图文步骤见 [浏览器扩展使用教程](docs/浏览器扩展使用教程.md)
 - **使用**：软件保持运行（最小化到托盘即可）→ 打开视频页 → 点击右下角标记 → 软件自动弹到前台并完成解析，选择画质后下载
 - **工具栏兜底**：任意页面可点扩展图标手动发送当前页面链接，交给软件自动判断平台
 - **提醒**：软件需处于运行状态（最小化到托盘也算）；扩展只在支持平台的视频页显示标记
