@@ -15,7 +15,7 @@
 [官网](https://www.aizzx.top/VideosDown) · [获取授权](https://www.aizzx.top/shop/1120.html) · [使用指南](#-使用指南) · [常见问题](#-常见问题) · [为什么选择](#-为什么选择-videosdown) · [从源码构建](#-从源码构建) · [反馈与联系](#-反馈与联系)
 
 <p align="center">
-  <img src="assets/home-light.png" width="435" alt="主程序界面（浅色）">&nbsp;&nbsp;<img src="assets/home-dark.png" width="435" alt="主程序界面（深色）"><br>
+  <img src="assets/home-light.png" width="400" alt="主程序界面（浅色）">&nbsp;&nbsp;<img src="assets/home-dark.png" width="400" alt="主程序界面（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -122,17 +122,17 @@
 - **平台范围**：列表解析当前开放 YouTube 与 Vimeo；B站 / Instagram 等平台的列表链接请在「批量下载」窗口解析
 
 <p align="center">
-  <img src="assets/parse-light.png" width="435" alt="解析任务（浅色）">&nbsp;&nbsp;<img src="assets/parse-dark.png" width="435" alt="解析任务（深色）"><br>
+  <img src="assets/parse-light.png" width="400" alt="解析任务（浅色）">&nbsp;&nbsp;<img src="assets/parse-dark.png" width="400" alt="解析任务（深色）"><br>
   <sub>单视频：浅色（左） · 深色（右）</sub>
 </p>
 
 <p align="center">
-  <img src="assets/parse-list-light.png" width="435" alt="列表解析条目多选（浅色）">&nbsp;&nbsp;<img src="assets/parse-list-dark.png" width="435" alt="列表解析条目多选（深色）"><br>
+  <img src="assets/parse-list-light.png" width="400" alt="列表解析条目多选（浅色）">&nbsp;&nbsp;<img src="assets/parse-list-dark.png" width="400" alt="列表解析条目多选（深色）"><br>
   <sub>列表 / 合集：条目多选 + 「本次下载」参数卡（浅色（左） · 深色（右））</sub>
 </p>
 
 <p align="center">
-  <img src="assets/parse-scope-light.png" width="435" alt="下载范围选择卡片（浅色）">&nbsp;&nbsp;<img src="assets/parse-scope-dark.png" width="435" alt="下载范围选择卡片（深色）"><br>
+  <img src="assets/parse-scope-light.png" width="400" alt="下载范围选择卡片（浅色）">&nbsp;&nbsp;<img src="assets/parse-scope-dark.png" width="400" alt="下载范围选择卡片（深色）"><br>
   <sub>视频在列表中：卡片选择下载范围——仅本视频 / 整个列表，双色区分选中项</sub>
 </p>
 
@@ -144,7 +144,7 @@
 - **并发调度**：超出同时下载数量的任务自动排队，前置任务完成后立即开始（合集任务整体占用一个并发位）
 
 <p align="center">
-  <img src="assets/tasks-light.png" width="435" alt="下载任务（浅色）">&nbsp;&nbsp;<img src="assets/tasks-dark.png" width="435" alt="下载任务（深色）"><br>
+  <img src="assets/tasks-light.png" width="400" alt="下载任务（浅色）">&nbsp;&nbsp;<img src="assets/tasks-dark.png" width="400" alt="下载任务（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -159,12 +159,12 @@
 - **风控提醒**：界面常驻 IP 风控提示，建议配合干净的代理 IP 并控制解析频率
 
 <p align="center">
-  <img src="assets/batch-light.png" width="435" alt="批量下载（浅色）">&nbsp;&nbsp;<img src="assets/batch-dark.png" width="435" alt="批量下载（深色）"><br>
+  <img src="assets/batch-light.png" width="400" alt="批量下载（浅色）">&nbsp;&nbsp;<img src="assets/batch-dark.png" width="400" alt="批量下载（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
 <p align="center">
-  <img src="assets/batch-links-light.png" width="435" alt="批量下载·链接列表（浅色）">&nbsp;&nbsp;<img src="assets/batch-links-dark.png" width="435" alt="批量下载·链接列表（深色）"><br>
+  <img src="assets/batch-links-light.png" width="400" alt="批量下载·链接列表（浅色）">&nbsp;&nbsp;<img src="assets/batch-links-dark.png" width="400" alt="批量下载·链接列表（深色）"><br>
   <sub>链接列表模式：浅色（左） · 深色（右）</sub>
 </p>
 
@@ -179,7 +179,7 @@
 - **防覆盖**：输出目录存在同名文件时自动追加序号，不会覆盖已有文件
 
 <p align="center">
-  <img src="assets/transcode-light.png" width="435" alt="视频转码（浅色）">&nbsp;&nbsp;<img src="assets/transcode-dark.png" width="435" alt="视频转码（深色）"><br>
+  <img src="assets/transcode-light.png" width="400" alt="视频转码（浅色）">&nbsp;&nbsp;<img src="assets/transcode-dark.png" width="400" alt="视频转码（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -192,7 +192,7 @@
 - **支持 Cookie**：可加载 Cookie 获取会员 / 受限内容对应的字幕与封面
 
 <p align="center">
-  <img src="assets/subtitle-light.png" width="435" alt="字幕封面（浅色）">&nbsp;&nbsp;<img src="assets/subtitle-dark.png" width="435" alt="字幕封面（深色）"><br>
+  <img src="assets/subtitle-light.png" width="400" alt="字幕封面（浅色）">&nbsp;&nbsp;<img src="assets/subtitle-dark.png" width="400" alt="字幕封面（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -205,7 +205,7 @@
 - **安全范围**：仅清理下载临时目录与日志目录，不触碰任何下载数据
 
 <p align="center">
-  <img src="assets/cache-light.png" width="435" alt="缓存清理（浅色）">&nbsp;&nbsp;<img src="assets/cache-dark.png" width="435" alt="缓存清理（深色）"><br>
+  <img src="assets/cache-light.png" width="400" alt="缓存清理（浅色）">&nbsp;&nbsp;<img src="assets/cache-dark.png" width="400" alt="缓存清理（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -218,7 +218,7 @@
 - **浏览器扩展**：查看「VideosDown 助手」扩展连接状态，一键打开扩展中心管理扩展行为
 
 <p align="center">
-  <img src="assets/settings-light.png" width="435" alt="软件设置（浅色）">&nbsp;&nbsp;<img src="assets/settings-dark.png" width="435" alt="软件设置（深色）"><br>
+  <img src="assets/settings-light.png" width="400" alt="软件设置（浅色）">&nbsp;&nbsp;<img src="assets/settings-dark.png" width="400" alt="软件设置（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -243,7 +243,7 @@
 - **提醒**：软件需处于运行状态（最小化到托盘也算）；悬浮标记只在支持平台的视频页显示；本次扩展更新新增了 Cookie 读取权限，更新后浏览器可能提示重新确认扩展权限
 
 <p align="center">
-  <img src="assets/browser-extension-center-light.png" width="435" alt="浏览器扩展中心（浅色）">&nbsp;&nbsp;<img src="assets/browser-extension-center-dark.png" width="435" alt="浏览器扩展中心（深色）"><br>
+  <img src="assets/browser-extension-center-light.png" width="400" alt="浏览器扩展中心（浅色）">&nbsp;&nbsp;<img src="assets/browser-extension-center-dark.png" width="400" alt="浏览器扩展中心（深色）"><br>
   <sub>软件内扩展中心：连接状态、安装引导与连接行为设置（浅色（左） · 深色（右））</sub>
 </p>
 
