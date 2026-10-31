@@ -4,9 +4,9 @@
 
 # VideosDown
 
-**基于 Proprietary 协议的跨平台桌面视频下载工具，内嵌字幕封面独立下载、批量下载与视频转码功能**
+**基于 Proprietary 协议的跨平台桌面视频下载工具，支持列表合集下载、批量下载、字幕封面独立下载与视频转码**
 
-[![Version](https://img.shields.io/badge/version-4.0.2-5bc372.svg)](https://www.aizzx.top/VideosDown)
+[![Version](https://img.shields.io/badge/version-4.1.0-5bc372.svg)](https://www.aizzx.top/VideosDown)
 [![License](https://img.shields.io/badge/license-Proprietary-orange.svg)](LICENSE.md)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64%20%7C%20macOS%20Apple%20Silicon%20%7C%20macOS%20Intel-lightgrey.svg)](#-安装)
 [![Core](https://img.shields.io/badge/core-yt--dlp%20%2B%20FFmpeg-red.svg)](https://github.com/yt-dlp/yt-dlp)
@@ -15,9 +15,8 @@
 [官网](https://www.aizzx.top/VideosDown) · [获取授权](https://www.aizzx.top/shop/1120.html) · [使用指南](#-使用指南) · [常见问题](#-常见问题) · [为什么选择](#-为什么选择-videosdown) · [从源码构建](#-从源码构建) · [反馈与联系](#-反馈与联系)
 
 <p align="center">
-  <img src="assets/home-light.png" width="49%" alt="主程序界面（浅色主题）">
-  <img src="assets/home-dark.png" width="49%" alt="主程序界面（深色主题）"><br>
-  <sub>主程序界面：浅色（左） · 深色（右）</sub>
+  <img src="assets/home-light.png" width="435" alt="主程序界面（浅色）">&nbsp;&nbsp;<img src="assets/home-dark.png" width="435" alt="主程序界面（深色）"><br>
+  <sub>浅色（左） · 深色（右）</sub>
 </p>
 
 </div>
@@ -30,6 +29,8 @@
 
 - **三标签工作流**：新建任务（链接输入）→ 解析任务（画质/字幕确认）→ 下载任务（进度管理），流程清晰
 - **多平台支持**：YouTube、Vimeo、Instagram、Facebook、X（Twitter）、StashMedia 等主流平台
+- 🆕 **列表与合集解析**：粘贴合集 / 播放列表 / 用户主页链接自动识别并展开条目；视频在列表中时以卡片选择下载范围（仅本视频 / 整个列表）；条目支持 Ctrl 加选、Shift 范围选，双击可单独解析
+- 🆕 **合集任务**：整个列表作为一个下载任务逐条完成——聚合进度实时显示「第几条 / 共几条」，单条失败自动继续，完成后可仅重试失败条目；文件名序号前缀 5 种格式；退出后按已完成条目续传
 - **智能解析**：按视频实际可用格式展示画质、编码与预估大小；音轨中文名称显示；字幕列出人工/自动轨，支持 SRT / VTT，不选择则不下载
 - 🆕 **重新下载**：中断或失败的任务一键恢复，自动接续已下载的进度，无需重新解析
 - **并发队列**：同时下载数量可调（1~6），超出部分自动排队，支持暂停 / 继续 / 取消与实时进度、速度、剩余时间
@@ -37,15 +38,16 @@
 
 ### 🌐 浏览器扩展
 
-- 🆕 **悬浮标记一键发送**：Chrome / Edge 打开支持平台的视频页，右下角「用 VideosDown 下载」悬浮标记点击即把链接发送到软件解析下载，免去手动复制粘贴
-- 🆕 **拖动与记忆**：标记可拖动，位置按站点记忆；SPA 页面切换自动跟随，工具栏图标可对任意页面手动发送
-- 🆕 **本机安全通信**：仅与本机运行的软件通信（127.0.0.1 回环），不收集、不上传任何浏览记录
-- **软件内扩展中心**：主窗口右上角提供快捷入口，设置面板保留完整管理入口，可查看连接状态、测试连接并管理扩展行为设置；Chrome / Edge 商店暂未上架，上架后可从这里一键前往安装
-- **扩展 1.1.0**：支持定期连接检测与设置同步；1.0.0 仍可发送链接，连接检测和悬浮按钮设置需使用 1.1.0
+- **悬浮标记一键发送**：Chrome / Edge 打开支持平台的视频页，右下角「用 VideosDown 下载」悬浮标记点击即把链接发送到软件解析下载，免去手动复制粘贴
+- 🆕 **六种形态模板**：胶囊 / 圆钮 / 侧签 / 迷你点 / 环钮 / 卡片，在扩展菜单中实时预览、一键切换；标记可拖动，位置按站点记忆、可随时清除
+- 🆕 **工具栏菜单**：点击扩展图标打开菜单——软件连接状态、解析当前页面、清除位置记忆、切换标记样式集中一处
+- 🆕 **登录 Cookie 一键导出**：在已登录的视频站点点「导出当前站点 Cookie」，浏览器登录态（Netscape 格式，含 HttpOnly，按平台关联域组采集）直接写入软件并即时接管为当前使用的 Cookie 文件，勾选「启用授权」后解析即用——Chrome / Edge 也能享受免手动导 Cookie
+- **本机安全通信**：仅与本机运行的软件通信（127.0.0.1 回环），不收集、不上传任何浏览记录；Cookie 仅在点击导出时传输
+- **软件内扩展中心**：主窗口右上角提供快捷入口，可查看连接状态、测试连接并管理扩展行为设置；Chrome / Edge 商店暂未上架，上架后可从这里一键前往安装
 
 ### 🧰 效率工具
 
-- **批量下载**：支持 YouTube / Vimeo / Instagram 等平台的主页、合集、列表地址批量解析与下载，任务状态实时标识
+- **批量下载**：支持 YouTube / B站 / Vimeo / Instagram 等平台的主页、合集、列表地址批量解析与下载，任务状态实时标识
 - **视频转码**：内置 FFmpeg 转码，支持 H264 / H265 / AV1 / VP9 编码、码率、分辨率与 NVIDIA / Intel / AMD / Apple GPU 加速，输出命名支持预设模板与实时示例预览
 - **字幕封面独立下载**：单独获取视频的字幕与封面资源
 - **功能面板**：代理检测、环境检测、缓存清理、查看日志、更新升级、免责声明、软件帮助、关于软件集中一处
@@ -95,8 +97,8 @@
 
 ## 🚀 快速上手
 
-1. 在「新建任务」粘贴视频链接，按回车或点击「开始解析」
-2. 在「解析任务」页选择画质、音轨与字幕（可选），确认保存目录
+1. 在「新建任务」粘贴视频链接（单视频 / 合集 / 列表 / 用户主页均可），按回车或点击「开始解析」
+2. 在「解析任务」页按链接类型确认：单视频选画质、音轨与字幕；列表勾选要下载的条目
 3. 点击「开始下载」，在「下载任务」页管理进度；中断的任务可随时「重新下载」续传
 
 ## 📖 使用指南
@@ -112,30 +114,43 @@
 
 ### 解析任务
 
-- **画质 / 音轨 / 字幕**：完全按解析结果展示，中文语言名称，附加选项按功能分组（音轨 ｜ 字幕语言与格式 ｜ 封面）
-- **本次下载**：文件名、保存目录与各项能力一览，确认后一键开始
+按链接类型自动进入对应形态：
+
+- **单视频**：画质 / 音轨 / 字幕完全按解析结果展示，中文语言名称，附加选项按功能分组（音轨 ｜ 字幕语言与格式 ｜ 封面）
+- **列表 / 合集 / 用户主页**：左侧条目列表（Ctrl 加选、Shift 范围选、Ctrl+A 全选，双击条目可单独解析），右侧「本次下载」设置卡（分辨率 / 序号前缀 / 保存到 / 字幕 / 封面），确认后整个列表作为一个任务下载（列表全量解析，大型频道耗时较久；下载前有平台风控提醒）
+- **视频在列表中**（如 YouTube `watch?v=…&list=…`）：弹出两张卡片选择下载范围——仅本视频 / 整个列表，每次解析都会询问
+- **平台范围**：列表解析当前开放 YouTube 与 Vimeo；B站 / Instagram 等平台的列表链接请在「批量下载」窗口解析
 
 <p align="center">
-  <img src="assets/parse-light.png" width="49%" alt="解析任务（浅色主题）">
-  <img src="assets/parse-dark.png" width="49%" alt="解析任务（深色主题）"><br>
-  <sub>浅色（左） · 深色（右）</sub>
+  <img src="assets/parse-light.png" width="435" alt="解析任务（浅色）">&nbsp;&nbsp;<img src="assets/parse-dark.png" width="435" alt="解析任务（深色）"><br>
+  <sub>单视频：浅色（左） · 深色（右）</sub>
+</p>
+
+<p align="center">
+  <img src="assets/parse-list-light.png" width="435" alt="列表解析条目多选（浅色）">&nbsp;&nbsp;<img src="assets/parse-list-dark.png" width="435" alt="列表解析条目多选（深色）"><br>
+  <sub>列表 / 合集：条目多选 + 「本次下载」参数卡（浅色（左） · 深色（右））</sub>
+</p>
+
+<p align="center">
+  <img src="assets/parse-scope-light.png" width="435" alt="下载范围选择卡片（浅色）">&nbsp;&nbsp;<img src="assets/parse-scope-dark.png" width="435" alt="下载范围选择卡片（深色）"><br>
+  <sub>视频在列表中：卡片选择下载范围——仅本视频 / 整个列表，双色区分选中项</sub>
 </p>
 
 ### 下载任务
 
 - **任务信息分层**：名称、百分比、进度条与速度 / 剩余时间各归其位，支持暂停 / 继续 / 取消 / 打开目录 / 删除
+- 🆕 **合集任务**：整个列表单行承载，状态实时显示「正在下载 (12/30)：当前条目」；单条失败不中断，完成后可「仅重试失败条目」；中断后点「继续下载剩余」按已完成续传
 - **重新下载**：中断或失败的任务点击后自动续传（无需重新解析、重选画质）
-- **并发调度**：超出同时下载数量的任务自动排队，前置任务完成后立即开始
+- **并发调度**：超出同时下载数量的任务自动排队，前置任务完成后立即开始（合集任务整体占用一个并发位）
 
 <p align="center">
-  <img src="assets/tasks-light.png" width="49%" alt="下载任务（浅色主题）">
-  <img src="assets/tasks-dark.png" width="49%" alt="下载任务（深色主题）"><br>
+  <img src="assets/tasks-light.png" width="435" alt="下载任务（浅色）">&nbsp;&nbsp;<img src="assets/tasks-dark.png" width="435" alt="下载任务（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
 ### 批量下载
 
-从工具栏打开独立窗口，适合一次下载整个主页、合集或一批链接：
+从工具栏打开独立窗口，适合一次下载整个主页、合集或一批链接（B站 / Instagram 等平台的列表链接在此窗口解析）：
 
 - **两种输入方式**：粘贴主页 / 合集 / 播放列表地址自动展开为逐个视频；或在文本框中每行一个链接批量加入
 - **选择即下载集**：单击选单条、Ctrl 加选/减选、Shift 范围选（与视频转码列表操作一致），点「开始下载」只下载选中项
@@ -144,15 +159,13 @@
 - **风控提醒**：界面常驻 IP 风控提示，建议配合干净的代理 IP 并控制解析频率
 
 <p align="center">
-  <img src="assets/batch-light.png" width="49%" alt="批量下载（浅色主题）">
-  <img src="assets/batch-dark.png" width="49%" alt="批量下载（深色主题）"><br>
-  <sub>列表解析：浅色（左） · 深色（右）</sub>
+  <img src="assets/batch-light.png" width="435" alt="批量下载（浅色）">&nbsp;&nbsp;<img src="assets/batch-dark.png" width="435" alt="批量下载（深色）"><br>
+  <sub>浅色（左） · 深色（右）</sub>
 </p>
 
 <p align="center">
-  <img src="assets/batch-links-light.png" width="49%" alt="批量下载（浅色主题）">
-  <img src="assets/batch-links-dark.png" width="49%" alt="批量下载（深色主题）"><br>
-  <sub>链接列表：浅色（左） · 深色（右）</sub>
+  <img src="assets/batch-links-light.png" width="435" alt="批量下载·链接列表（浅色）">&nbsp;&nbsp;<img src="assets/batch-links-dark.png" width="435" alt="批量下载·链接列表（深色）"><br>
+  <sub>链接列表模式：浅色（左） · 深色（右）</sub>
 </p>
 
 ### 视频转码
@@ -166,8 +179,7 @@
 - **防覆盖**：输出目录存在同名文件时自动追加序号，不会覆盖已有文件
 
 <p align="center">
-  <img src="assets/transcode-light.png" width="49%" alt="视频转码（浅色主题）">
-  <img src="assets/transcode-dark.png" width="49%" alt="视频转码（深色主题）"><br>
+  <img src="assets/transcode-light.png" width="435" alt="视频转码（浅色）">&nbsp;&nbsp;<img src="assets/transcode-dark.png" width="435" alt="视频转码（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -180,8 +192,7 @@
 - **支持 Cookie**：可加载 Cookie 获取会员 / 受限内容对应的字幕与封面
 
 <p align="center">
-  <img src="assets/subtitle-light.png" width="49%" alt="字幕封面（浅色主题）">
-  <img src="assets/subtitle-dark.png" width="49%" alt="字幕封面（深色主题）"><br>
+  <img src="assets/subtitle-light.png" width="435" alt="字幕封面（浅色）">&nbsp;&nbsp;<img src="assets/subtitle-dark.png" width="435" alt="字幕封面（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
@@ -194,50 +205,61 @@
 - **安全范围**：仅清理下载临时目录与日志目录，不触碰任何下载数据
 
 <p align="center">
-  <img src="assets/cache-light.png" width="49%" alt="缓存清理（浅色主题）">
-  <img src="assets/cache-dark.png" width="49%" alt="缓存清理（深色主题）"><br>
+  <img src="assets/cache-light.png" width="435" alt="缓存清理（浅色）">&nbsp;&nbsp;<img src="assets/cache-dark.png" width="435" alt="缓存清理（深色）"><br>
+  <sub>浅色（左） · 深色（右）</sub>
+</p>
+
+### 软件设置
+
+从工具栏齿轮图标打开，分组管理常用配置：
+
+- **下载**：同时下载数量（1~6）、新建任务的链接历史保留条数（5~30 条）
+- **窗口行为**：关闭主窗口时是否最小化到系统托盘（默认直接退出，可改为托盘驻留继续接收扩展链接）
+- **浏览器扩展**：查看「VideosDown 助手」扩展连接状态，一键打开扩展中心管理扩展行为
+
+<p align="center">
+  <img src="assets/settings-light.png" width="435" alt="软件设置（浅色）">&nbsp;&nbsp;<img src="assets/settings-dark.png" width="435" alt="软件设置（深色）"><br>
   <sub>浅色（左） · 深色（右）</sub>
 </p>
 
 ### Cookie 授权
 
 - **为什么需要 Cookie**：部分平台登录后可解锁更高清晰度（如默认 480P → 1080P/2K/4K）；海外平台 IP 受限时需加载对应 Cookie
-- **自动获取**：从已安装的 Firefox 导出 Cookie（Chrome / Edge 因浏览器加密暂不支持）
+- **扩展一键导出（推荐，Chrome / Edge 可用）**：在已登录目标网站的浏览器中，点「VideosDown 助手」扩展菜单里的「导出当前站点 Cookie」——登录态直接写入软件并即时接管为当前使用的 Cookie 文件，无需手动加载
+- **自动获取**：从已安装的 Firefox 导出 Cookie（Chrome / Edge 因浏览器加密暂不支持，请改用扩展导出）
 - **手动导入（三步）**：
   1. 安装浏览器插件 —— Chrome/Edge：[Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) ｜ Firefox：[cookies.txt by Lennon Hill](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)
   2. 在已登录目标网站的浏览器中，用插件导出 cookies.txt（Netscape 格式）
   3. 回到软件勾选「启用授权」，点「手动选择」按钮加载导出的文件
-- **按平台记忆**：每个网站的 Cookie 独立保存，可一键清除当前平台记录
+- **最后操作生效**：手动选择 / Firefox 获取 / 扩展导出三种方式，谁最后操作软件就用谁的 Cookie 文件；软件记住最后一次的选择，可一键清除
 
 ### 浏览器扩展
 
-配合 Chrome / Edge 浏览器使用：安装「VideosDown 助手」扩展后，支持平台的视频页右下角会出现「用 VideosDown 下载」悬浮标记，点击即把链接发送到软件解析下载。
+配合 Chrome / Edge 浏览器使用：安装「VideosDown 助手」扩展（1.2.0）后，支持平台的视频页会出现悬浮标记，点击即把链接发送到软件解析下载。
 
 - **安装**：在软件主窗口右上角点击扩展图标，或从「设置 → 打开扩展中心」前往 VideosDown 官网下载扩展包；Chrome / Edge 商店暂未上架，上架后可从软件内一键前往安装。图文步骤见 [浏览器扩展使用教程](docs/浏览器扩展使用教程.md)
-- **使用**：软件保持运行（最小化到托盘即可）→ 打开视频页 → 点击右下角标记 → 软件自动弹到前台并完成解析，选择画质后下载
-- **工具栏兜底**：任意页面可点扩展图标手动发送当前页面链接，交给软件自动判断平台
-- **提醒**：软件需处于运行状态（最小化到托盘也算）；扩展只在支持平台的视频页显示标记
+- **悬浮标记**：点击发送当前视频页；可拖动到顺手的位置（按站点记忆），六种形态模板（胶囊 / 圆钮 / 侧签 / 迷你点 / 环钮 / 卡片）按喜好切换
+- **工具栏菜单**：点击扩展图标打开——顶部显示软件连接状态；「解析视频」把当前页面交给软件解析（规则未覆盖的站点也能用）；「导出当前站点 Cookie」把浏览器登录态写入软件（按平台关联域组采集，如 YouTube 连同 .google.com 一起导出，登录态更完整；仅点击时传输，绝不自动附带）；「位置记忆」可清除当前站点或全部站点的标记位置；「悬浮标记样式」实时预览并切换形态
+- **提醒**：软件需处于运行状态（最小化到托盘也算）；悬浮标记只在支持平台的视频页显示；本次扩展更新新增了 Cookie 读取权限，更新后浏览器可能提示重新确认扩展权限
 
 <p align="center">
-  <img src="assets/browser-extension-light.png" width="49%" alt="浏览器扩展设置（浅色主题）">
-  <img src="assets/browser-extension-dark.png" width="49%" alt="浏览器扩展设置（深色主题）"><br>
-  <sub>软件内浏览器扩展设置：浅色（左） · 深色（右）</sub>
+  <img src="assets/browser-extension-center-light.png" width="435" alt="浏览器扩展中心（浅色）">&nbsp;&nbsp;<img src="assets/browser-extension-center-dark.png" width="435" alt="浏览器扩展中心（深色）"><br>
+  <sub>软件内扩展中心：连接状态、安装引导与连接行为设置（浅色（左） · 深色（右））</sub>
 </p>
 
-扩展安装并启用后，可在浏览器扩展管理页查看状态与权限：
-
 <p align="center">
-  <img src="assets/browser-extension-assistant.png" width="49%" alt="浏览器中的 VideosDown 助手扩展">
+  <img src="assets/browser-extension-popup-light.png" width="300" alt="扩展工具栏菜单（浅色）">&nbsp;&nbsp;<img src="assets/browser-extension-popup-dark.png" width="300" alt="扩展工具栏菜单（深色）"><br>
+  <sub>工具栏菜单：浅色（左） · 深色（右）——连接状态、解析当前视频、Cookie 导出、外观与位置记忆</sub>
 </p>
 
-### 软件设置
-
-设置面板可调整下载行为、界面偏好与浏览器扩展通信选项；配置项按功能分区展示。
+<p align="center">
+  <img src="assets/browser-extension-float-badge.png" width="360" alt="视频页悬浮标记（胶囊形态）"><br>
+  <sub>视频页悬浮标记：点击即把当前视频页链接发送到软件解析下载</sub>
+</p>
 
 <p align="center">
-  <img src="assets/settings-light.png" width="49%" alt="软件设置（浅色主题）">
-  <img src="assets/settings-dark.png" width="49%" alt="软件设置（深色主题）"><br>
-  <sub>软件设置：浅色（左） · 深色（右）</sub>
+  <img src="assets/browser-extension-marker-styles.png" width="380" alt="六种标记形态模板（浅色）"><br>
+  <sub>六种形态模板（胶囊 / 圆钮 / 侧签 / 迷你点 / 环钮 / 卡片）实时预览、一键切换</sub>
 </p>
 
 ## ⚙️ 配置与数据位置
@@ -269,6 +291,7 @@
     - 🔧 **备用**：终端对软件内的组件去除隔离标记（只影响本软件，不改系统设置）：
       `xattr -rd com.apple.quarantine "/Applications/VideosDown.app"`
 - **下载的视频播放异常**：部分编码视频常规播放器不支持解码，推荐使用 PotPlayer（Windows）/ IINA（macOS）播放
+- **TikTok 字幕检测不到**：TikTok 自动字幕仅对部分视频生成（创作者上传或平台识别）；无 CC 数据的视频软件会如实显示"该视频无可用字幕"
 - **换电脑**：可在「卡密中心」自助解绑换机，规则详见[官方文档](https://www.aizzx.top/20.html)
 
 ## 🔑 授权体系
@@ -301,20 +324,17 @@
 **方式一：Git 克隆（推荐，便于后续更新）**
 
 ```bash
-git clone <授权后获取的仓库地址> VideosDown
+git clone https://gitee.com/xxxxxx/videosdown.git            # 主仓库（Gitee）-获取授权后可见具体地址
+git clone https://github.comxxxxxx/VideosDown-Private.git   # 备用仓库（GitHub）-获取授权后可见具体地址
 cd VideosDown
-git switch <授权后指定的分支>
+git checkout <分支>   # main=主线 ｜ dev=开发分支 ｜ feat=新功能方向
 ```
-
-> 仓库地址与可访问分支由源码授权后提供；主仓库和备用仓库任选其一，不要连续克隆多个仓库。
 
 **方式二：下载压缩包**
 
 在仓库页面点击「克隆 / 下载 → 下载 ZIP」解压即可（不含 Git 历史，后续更新需重新下载）。
 
 ### 环境准备与运行
-
-项目使用 `uv` 根据 `pyproject.toml` 与 `uv.lock` 固定 Python 和依赖版本；不要再使用未锁定的 `pip install -r requirements.txt` 流程。
 
 > [!NOTE]
 > 仓库**不包含** FFmpeg 与 Deno 运行时（已被 `.gitignore` 排除），首次构建前需自行准备：
@@ -324,21 +344,18 @@ git switch <授权后指定的分支>
 > - 也可以直接从官方预编译安装包中复制这两个目录
 
 ```bash
-# 安装 uv：https://docs.astral.sh/uv/getting-started/installation/
-# pyproject.toml 固定要求 Python 3.14.8；uv 会按需下载并管理该版本
+# 1. 安装 uv（若尚未安装）
+# macOS / Linux：
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Windows（PowerShell）：
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-# 同步项目依赖并创建虚拟环境
+# 2. 同步依赖（自动创建虚拟环境并按 uv.lock 安装，Python 3.14.8 由 uv 自动准备）
 uv sync
 
-# 运行
-uv run python videosdown.py
-
-# 构建当前平台版本（Windows 生成 Inno Setup 安装包，macOS 生成 DMG）
-uv run python build_app.py
+# 3. 运行
+uv run videosdown.py
 ```
-
-> Windows 构建需要安装 Inno Setup；如 `ISCC.exe` 不在默认位置，可设置 `INNO_SETUP_COMPILER` 环境变量。
-> macOS 构建需要安装 `create-dmg`（`brew install create-dmg`）。首次构建前还需按上方说明准备平台对应的 FFmpeg 与 Deno 文件。
 
 ## 📄 许可证与声明
 
@@ -361,9 +378,12 @@ uv run python build_app.py
 
 | 组件 | 用途 | 许可 |
 | --- | --- | --- |
-| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | 媒体信息解析与下载核心 | Unlicense（公有领域） |
+| [Python](https://www.python.org/) | 本项目核心开发语言 | PSF-2.0（Python 软件基金会许可） |
 | [FFmpeg](https://ffmpeg.org/) | 媒体解析、合并与转码 | LGPL/GPL（以实际分发构建为准） |
 | [PySide6（Qt for Python）](https://doc.qt.io/qtforpython/) | 桌面图形界面 | LGPLv3（动态链接方式使用） |
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | 媒体信息解析与下载核心 | Unlicense（公有领域） |
+| [requests](https://github.com/psf/requests) | HTTP 请求（更新检查、网络通信） | Apache-2.0 |
+| [psutil](https://github.com/giampaolo/psutil) | 网络接口信息采集（设备绑定） | BSD-3-Clause |
 | [Deno](https://deno.com/) | JavaScript 运行环境 | MIT |
 | [Nuitka](https://nuitka.net/) | 独立应用打包 | Apache 2.0 |
 
