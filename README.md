@@ -6,7 +6,7 @@
 
 **基于 Proprietary 协议的跨平台桌面视频下载工具，支持列表合集下载、批量下载、字幕封面独立下载与视频转码**
 
-[![Version](https://img.shields.io/badge/version-4.1.0-5bc372.svg)](https://www.aizzx.top/VideosDown)
+[![Version](https://img.shields.io/badge/version-4.2.0-5bc372.svg)](https://www.aizzx.top/VideosDown)
 [![License](https://img.shields.io/badge/license-Proprietary-orange.svg)](LICENSE.md)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64%20%7C%20macOS%20Apple%20Silicon%20%7C%20macOS%20Intel-lightgrey.svg)](#-安装)
 [![Core](https://img.shields.io/badge/core-yt--dlp%20%2B%20FFmpeg-red.svg)](https://github.com/yt-dlp/yt-dlp)
